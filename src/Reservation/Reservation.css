@@ -1,0 +1,12 @@
+.reservation {
+  width: 100px;
+  margin: 1%;
+  background-color: white;
+  border: 3px solid teal;
+  border-radius: 5%;
+}
+
+button {
+  background-color: teal;
+  margin-bottom: 4%;
+}

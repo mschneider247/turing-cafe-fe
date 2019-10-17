@@ -6,11 +6,12 @@ const Reservation = (props) => {
   console.log("Inside Reservation props", props)
 
   return (
-    <article>
+    <article className="reservation">
       <p>{props.name}</p>
       <p>{props.date}</p>
       <p>{props.time}</p>
       <p>{props.numGuests}</p>
+      <button>Cancel</button>
     </article>
   )
 }
