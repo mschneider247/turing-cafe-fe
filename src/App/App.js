@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      reservations: []
+      reservations: [],
     }
   }
 
@@ -18,12 +18,18 @@ class App extends Component {
       .then(data => this.setState({ reservations: data}))
   }
 
+  addReservation = (reservation) => {
+    let currentReservations = [...this.state.reservations]
+    currentReservations.push(reservation)
+    this.setState({ reservations: currentReservations})
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          <Form />
+          <Form addReservation={this.addReservation}/>
         </div>
         <div className='resy-container'>
           <ReservationContainer reservations={this.state.reservations}/>
