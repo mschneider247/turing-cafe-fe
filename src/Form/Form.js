@@ -41,13 +41,13 @@ class Form extends Component {
           onChange={event => this.updateFormState(event)}>
         </input>
         <input
-          type='text'  
+          type='number'  
           placeholder='Number of Guests'
           name='guests'
           value={this.state.guests} 
           onChange={event => this.updateFormState(event)}>
         </input>
-        <button>Make Reservation</button>
+        <button onClick={() => this.props.addReservation(this.state)}>Make Reservation</button>
       </section>
     )
   }
