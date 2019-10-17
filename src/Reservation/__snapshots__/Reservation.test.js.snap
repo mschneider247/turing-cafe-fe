@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form Should match the snapshot 1`] = `
+<article
+  className="reservation"
+>
+  <p />
+  <p />
+  <p />
+  <p />
+  <button>
+    Cancel
+  </button>
+</article>
+`;
