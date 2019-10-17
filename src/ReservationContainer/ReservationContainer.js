@@ -14,6 +14,7 @@ const ReservationContainer = (props) => {
       date={reservation.date}
       time={reservation.time}
       numGuests={reservation.number}
+      removeReservation={props.removeReservation}
       />
   })
 

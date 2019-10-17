@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form Should match the snapshot 1`] = `
+exports[`Reservation Should match the snapshot 1`] = `
 <article
   className="reservation"
 >
@@ -8,7 +8,9 @@ exports[`Form Should match the snapshot 1`] = `
   <p />
   <p />
   <p />
-  <button>
+  <button
+    onClick={[Function]}
+  >
     Cancel
   </button>
 </article>
