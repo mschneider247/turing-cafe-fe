@@ -36,8 +36,6 @@ class App extends Component {
   }
 
   removeReservation = (id) => {
-    console.log("Remove Reservation Firing!!")
-    console.log("id===", id);
     let currentReservations = [...this.state.reservations]
     currentReservations.forEach((reservation, index) => {
       if (reservation.id === id){
@@ -45,6 +43,14 @@ class App extends Component {
       }
     });
     this.setState({ reservations: currentReservations})
+    this.deleteReservation(id);
+  }
+
+  deleteReservation = (id) => {
+    const options = {
+      method: 'DELETE'
+    }
+    fetch(`http://localhost:3001/api/v1/reservations/${id}`, options)
   }
 
   render() {
