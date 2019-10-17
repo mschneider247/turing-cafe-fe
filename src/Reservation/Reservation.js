@@ -8,7 +8,7 @@ const Reservation = (props) => {
       <p>{props.name}</p>
       <p>{props.date}</p>
       <p>{props.time}</p>
-      <p>{props.numGuests}</p>
+      <p>{props.number}</p>
       <button onClick={() => props.removeReservation(props.id)}>Cancel</button>
     </article>
   )
