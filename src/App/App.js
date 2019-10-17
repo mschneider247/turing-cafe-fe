@@ -24,6 +24,18 @@ class App extends Component {
     this.setState({ reservations: currentReservations})
   }
 
+  removeReservation = (id) => {
+    console.log("Remove Reservation Firing!!")
+    console.log("id===", id);
+    let currentReservations = [...this.state.reservations]
+    currentReservations.forEach((reservation, index) => {
+      if (reservation.id === id){
+        currentReservations.splice(index, 1)
+      }
+    });
+    this.setState({ reservations: currentReservations})
+  }
+
   render() {
     return (
       <div className="App">
@@ -32,7 +44,7 @@ class App extends Component {
           <Form addReservation={this.addReservation}/>
         </div>
         <div className='resy-container'>
-          <ReservationContainer reservations={this.state.reservations}/>
+          <ReservationContainer reservations={this.state.reservations} removeReservation={this.removeReservation}/>
         </div>
       </div>
     )

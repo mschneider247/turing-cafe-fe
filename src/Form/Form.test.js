@@ -20,4 +20,11 @@ describe('Form', () => {
     wrapper.instance().updateFormState(mockEvent)
     expect(wrapper.state('name')).toEqual('Steve')
   })
+
+  it('Should trigger addReservation when button clicked', () => {
+    const addReservation =  jest.fn();
+    const wrapper = shallow(<Form addReservation={addReservation}/>);
+    wrapper.find('button').simulate('click');
+    expect(addReservation).toHaveBeenCalled();
+  })
 })
