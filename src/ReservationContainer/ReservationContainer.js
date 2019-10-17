@@ -4,8 +4,6 @@ import Reservation from '../Reservation/Reservation'
 
 const ReservationContainer = (props) => {
 
-  console.log("Inside ReservationContainer props.reservations:::", props.reservations)
-
   let reservations = props.reservations.map(reservation => {
     return <Reservation 
       key={reservation.id}
@@ -13,7 +11,7 @@ const ReservationContainer = (props) => {
       name={reservation.name}
       date={reservation.date}
       time={reservation.time}
-      numGuests={reservation.number}
+      number={reservation.number}
       removeReservation={props.removeReservation}
       />
   })

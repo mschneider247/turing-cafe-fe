@@ -12,7 +12,6 @@ class App extends Component {
   }
 
   componentDidMount () {
-    console.log("App is mounting")
     fetch('http://localhost:3001/api/v1/reservations')
       .then(data => data.json())
       .then(data => this.setState({ reservations: data}))
@@ -22,6 +21,18 @@ class App extends Component {
     let currentReservations = [...this.state.reservations]
     currentReservations.push(reservation)
     this.setState({ reservations: currentReservations})
+    this.postReservation(reservation)
+  }
+
+  postReservation = (reservation) => {
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(reservation),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    fetch('http://localhost:3001/api/v1/reservations', options)
   }
 
   removeReservation = (id) => {

@@ -5,10 +5,11 @@ class Form extends Component {
   constructor() {
     super()
     this.state = {
+      id: Date.now(),
       name: '',
       date: '',
       time: '',
-      guests: ''
+      number: ''
     }
   }
 
@@ -43,7 +44,7 @@ class Form extends Component {
         <input
           type='number'  
           placeholder='Number of Guests'
-          name='guests'
+          name='number'
           value={this.state.guests} 
           onChange={event => this.updateFormState(event)}>
         </input>
